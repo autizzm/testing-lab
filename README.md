@@ -2,6 +2,32 @@
 
 #### Configuration:
 
+In ConfigClass change username and password to your ones:
+```java
+public class ConfigClass {
+    private static Connection connection;
+    private Statement statement;
+
+    private static String driver = "com.mysql.cj.jdbc.Driver";
+    private static String username = "root";
+    private static String password = "root";
+    private static String url = "jdbc:mysql://localhost:3306/testdb";
+    public ConfigClass() throws ClassNotFoundException, SQLException {
+        Class.forName(driver);
+        connection = DriverManager.getConnection(url, username, password);
+        statement = connection.createStatement();
+    }
+
+    public static Connection getConnection() {
+        return connection;
+    }
+
+    public void closeConnection() throws SQLException {
+        connection.close();
+    }
+}
+```
+
 ---
 ### If you want to change DB to Postgres
 
