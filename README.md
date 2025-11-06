@@ -28,6 +28,10 @@ public class ConfigClass {
 }
 ```
 
+> [!note]
+> If you prefer using postgres -> change the port in the url to `5432` and the protocol to `postgresql`, so it looks like this:
+> `jdbc:postgresql://localhost:5432/testdb`
+
 ---
 ### If you want to change DB to Postgres
 
